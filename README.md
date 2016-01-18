@@ -1,2 +1,2 @@
-#Day 5
-Toady we worked with HTML5's canvas feature to draw our names.
+#Day 6
+Toady we used the canvas feature used on Day 5 to make an analog clock.
