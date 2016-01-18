@@ -1,83 +1,69 @@
+
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Winter07</title>
-		<style type="text/css">
-		@import url(https://fonts.googleapis.com/css?family=Architects+Daughter);
-			body {
-				position: absolute;
-				top:10%;
-				left:30%;
-				 background-color:  #000c1a;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Winter 08</title>
+    <style>
+    #seconds{
+        background:rgb(255,0,0);
+        background-image: http://polkacafe.s3.amazonaws.com/articles/thumbs/ti_725_3054.2484001441.gif;
+    }
+    </style>
+    <style>
+    #minutes{
+        background:rgb(135,206,250);
+    }
+    </style>
+    <style>
+    #hours{
+        background:rgb(255,20,147);
+    }
+    </style>
+</head>
+<body>
+<div id="myTime">
+    Seconds:
+    <div id="seconds">...</div>
+</div>
 
-			}
-			#actualtime {
-				position: absolute;
-				
+<div id="myTime">
+    Minutes:
+    <div id="minutes">...</div>
+</div>
+    
+    <div id="myTime">
+    Hours:
+    <div id="hours">...</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script>
+
+function drawClock(){
+    d = new Date();
+    seconds = d.getSeconds();
+    perseconds = seconds/60 *100;
+    $("#seconds").width(perseconds + "%");
+    $("#seconds").height(15);
+    $("#seconds").text(seconds);
 
 
-			}
-			#canvas {
-				background-color: #000c1a;
-				font-family: 'Architects Daughter',cursive;
-			}
+    minutes = d.getMinutes();
+    perminutes=minutes/60*100;
+    $("#minutes").width(perminutes + "%");
+    $("#minutes").height(100);
+    $("#minutes").text(minutes);
 
-		</style>
-		
-	</head>
-	<body>
-	<canvas id="canvas" width="700" height="700" ></canvas>
-	<div id = "actualtime">...</div>
+    hours = d.getHours();
+    perhours=hours/60*100;
+    $("#hours").width(perhours   + "%");
+    $("#hours").height(300);
+    $("#hours").text(hours);
+}
 
-<!--Script for custom font -->
-	<script type="text/javascript">
-	  WebFontConfig = {
-	    google: { families: [ 'Oswald::latin' ] }
-	  };
-	  (function() {
-	    var wf = document.createElement('script');
-	    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-	      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-	    wf.type = 'text/javascript';
-	    wf.async = 'true';
-	    var s = document.getElementsByTagName('script')[0];
-	    s.parentNode.insertBefore(wf, s);})(); 
-  </script>
-
-	<script type="text/javascript">
-			function update (){
-			var current = new Date();
-				var minutes = current.getMinutes() + (current.getHours()*60);
-				var percent = minutes/1440;
-				var percentouter = current.getMinutes()/60;
-				//var percentseconds = current.getSeconds()/60;
-				var smoothseconds = current.getMilliseconds() + current.getSeconds()*1000;
-				var percentseconds = smoothseconds/60000
-				var canvas = document.getElementById("canvas");
-				var width = canvas.width;
-				var height = canvas.height;
-	       		 var ctx = canvas.getContext("2d"); 
-	       		 	ctx.fillStyle = "#99ccff";
-	       		 	ctx.beginPath();
-	       		 	ctx.clearRect(0, 0,width,height);
-	       		 	ctx.lineWidth = 10;
-	       		 	ctx.strokeStyle = '#4db7ff';
-		       		ctx.arc(width/2,height/2,200,0,(2*Math.PI)*percent);
-		       		ctx.stroke();
-		       		ctx.beginPath();
-		       		ctx.strokeStyle = '#33cccc';
-		       		ctx.arc(width/2,height/2,250,0,(2*Math.PI)*percentouter);
-		       		ctx.stroke();
-		       		ctx.beginPath();
-		       		ctx.strokeStyle = '#333399';
-		       		ctx.arc(width/2,height/2,300,0,(2*Math.PI)*percentseconds);
-		       		ctx.stroke();
-		       		ctx.font = "50px Oswald";
-		       		ctx.fillText(current.toLocaleTimeString(),width/2.7,height/2);
-
-	       		}
-	       		window.onload = setInterval (update,1);
-		</script>
-	</body>
-
+drawClock();
+setInterval(drawClock,1000);
+</script>
+</body>
 </html>

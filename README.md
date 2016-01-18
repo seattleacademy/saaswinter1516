@@ -1,2 +1,3 @@
-#Day 7
-Toady we used the canvas feature and our CSS / JavaScript knowledge to  make an analog clock.
+#Day 8
+Toady we worked on making clocks that separate and visualize seconds, minutes,
+ and hours.
