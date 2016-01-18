@@ -1,155 +1,88 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-    <title>Winter 04</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <style type="text/css">
-        @import url(https://fonts.googleapis.com/css?family=Archivo+Black);
-        
-         body {
-            background-color: rgb(128,128,128);
-
- }
-.clock{
-  width: 100%;
-  height: 100%;
-   background-repeat: no-repeat;
-   background-position: center;
-   position: absolute;
-}
-.flag1 {
-  width: 50%;
-  height: 50%;
-   background-position: center;
-   position: absolute;
-   left: 25%;
-   top: 25%;
-}
-.flag2 {
-  width: 50%;
-  height: 50%;
-   background-position: center;
-   position: absolute;
-   left: 25%;
-   top: 25%;
-}
- #theHours {
-   color: white;
-   font-family: 'Archivo Black', sans-serif;
-   font-size: 500%;
-   font-style: italic;
-   position: absolute;
-   left:30%;
-   top: 45%
- }
- 
- #theMinutes {
-   color: red;
-   font-family: 'Archivo Black', sans-serif;
-   font-size: 500%;
-   font-style: italic;
-   position: absolute;
-   left:47%;
-   top: 45%;
- }
- 
- #theSeconds {
-   color: green;
-   font-family: 'Archivo Black', sans-serif;
-   font-size: 500%;
-   font-style: italic;
-   position: absolute;
-   left:65%;
-   top: 45%;
- }
- 
-   p{
-    position: absolute;
-    font-size: 20px;
-    color: white;
-    font-style: italic;
-   }     
-        .a {
-            color: red;
-            font-size: 45px;
-        }
-        .b {
-            color:white;
-            font-size: 45px;
-        }
-        .c {
-            color: blue;
-            font-size: 45px;
-        }
-    </style>
-    <script>
-            $(document).ready(function() {
-              $(".flag2").hide();
-              
-}); 
-
-    </script>
-   
-    <script>
-        function updateTime() {
-            d = new Date();
-            document.getElementById("theHours").innerHTML =
-            d.getHours();
-            document.getElementById("theMinutes").innerHTML =
-            d.getMinutes();
-            document.getElementById("theSeconds").innerHTML =
-            d.getSeconds();
-        }
-        window.onload = setInterval(updateTime, 1000);
-    
-    function switchColors(element)  
-{  
-links=document.getElementsByTagName("theHours") ;  
-for (var i = 0 ; i < links.length ; i ++)  
-links.item(i).style.color = 'green' ;  
-element.style.color='red' ;  
-}
-    function switchColors2(element)  
-{  
-links=document.getElementsByTagName("theMinutes") ;  
-for (var i = 0 ; i < links.length ; i ++)  
-links.item(i).style.color = 'red' ;  
-element.style.color='white' ;  
-}  
-    function switchColors3(element)    
-{  
-links=document.getElementsByTagName("theSeconds") ;  
-for (var i = 0 ; i < links.length ; i ++)  
-links.item(i).style.color = 'green' ;  
-element.style.color='blue' ;  
-}  
-    function showDate() {
-        var d = new Date();
-var weekday = new Array(7);
-weekday[0]=  "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
-
-var n = weekday[d.getDay()];
+    <title>Winter 05</title>
+    <style>
+    #canvas {
+        margin: 10px;
+        padding: 10px;
+        background: #ffffff;
+        border: thin inset #aaaaaa;
     }
-
-    </script>
-
+    </style>
 </head>
 
-<body class="clock">
-<img class="flag1"src="https://c1.staticflickr.com/7/6193/6078030705_6ae37bb1f6_b.jpg">
-<p class="text">Click on the time and the Italian flag to make the page become <span class="a"> Ame</span><span class="b">ric</span><span class="c">an</span></p>
-    <div id="theHours" onclick="switchColors(this);">...</div>
-    <div id="theMinutes" onclick="switchColors2(this);">...</div>
-    <div id="theSeconds" onclick="switchColors3(this);">...</div>
-    <img class="flag2" src="http://images6.alphacoders.com/512/512054.jpg"></img>
-  </div>
- </div>
+<body>
+    <canvas id='canvas' width='600' height='300'>
+        This will print if Canvas not supported
+    </canvas>
+    <script>
+    var canvas = document.getElementById('canvas'),
+  context = canvas.getContext('2d');
 
+context.font = '18pt Arial';
+context.fillStyle = 'rgb(4,222,3)';
+context.fillText("Hello World", 10, 20);
+context.lineWidth=10;
+// N - three strokes
+context.beginPath();
+context.moveTo(10, 100);
+context.lineTo(10, 200);
+context.stroke();
+context.moveTo(10, 100);
+context.lineTo(40, 200);
+context.stroke();
+context.moveTo(40, 200);
+context.lineTo(40, 100);
+context.stroke();
+// O - one stroke
+context.moveTo(140, 150);
+context.arc(100, 150, 40, 0, 2*Math.PI);
+context.stroke();
+// A - three strokes
+context.moveTo(200, 100);
+context.lineTo(160, 200);
+context.stroke();
+context.moveTo(200, 100);
+context.lineTo(240, 200);
+context.stroke();
+context.moveTo(180, 150);
+context.lineTo(220, 150);
+context.stroke();
+// H - three strokes
+context.moveTo(260, 100);
+context.lineTo(260, 200);
+context.stroke();
+context.moveTo(300, 100);
+context.lineTo(300, 200);
+context.stroke();
+context.moveTo(260, 150);
+context.lineTo(300, 150);
+context.stroke();
+//context.arc(100,150,50,0,2*Math.PI);
+//context.moveTo(150,150);
+//context.lineTo(100,150);
+//context.stroke();
+
+//context.beginPath();
+//context.moveTo(200,100);
+//context.lineTo(170,200);
+//context.moveTo(200,100)
+//context.lineTo(230,200);
+//context.moveTo(185,150);
+//context.lineTo(215,150);
+//context.stroke();
+
+//context.beginPath();
+//context.moveTo(250,100);
+//context.lineTo(250,200);
+//context.stroke();
+//context.beginPath();
+
+//context.arc(255,125,24,-.5*Math.PI,.5*Math.PI);
+  //          context.stroke();
+    </script>
 </body>
+
 </html>

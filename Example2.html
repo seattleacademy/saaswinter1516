@@ -1,47 +1,55 @@
-<!DOCTYPE html>
 <html>
+	<head>
+		<title>winter05</title>
+		<style>
+		#script {
 
-<head>
-    <title>swatch clock!</title>
-    <style>
-    .clock {
-        width: 100%;
-        height: 1000px;
-        background-image:url(https://s-media-cache-ak0.pinimg.com/736x/f0/f9/d2/f0f9d2f5af67386e3c22232c8e29c98a.jpg);
-        background-color: black;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 70%;
-        text-align: center;
-        font-style: bold;
-    }
-    
-    #swatchTime {
-        color: white;
-        font-size: 1000%;
-    }
-    </style>
-    <script>
-    function updateTime() {
-        d = new Date();
-        hours = d.getHours();
-        minutes = d.getMinutes();
-        seconds = d.getSeconds();
-        totalSeconds = seconds + minutes * 60 + hours * 3600;
-        totalSeconds=totalSeconds+32400
-        dayFraction = totalSeconds / (86000);
-        swatchTime = dayFraction * 1000;
-        swatchTime = '@' + swatchTime.toFixed(2);
-        document.getElementById("swatchTime").innerHTML = swatchTime;
-    }
-    window.onload = setInterval(updateTime, 1000);
-    </script>
-</head>
+		}
 
-<body>
-    <div class="clock">
-        <span id="swatchTime">...</span>
-    </div>
-</body>
 
+		</style>
+
+	</head>
+	<body>
+		<canvas id='canvas' width='800' height='500'>
+        	This will print if Canvas not supported
+    	</canvas>
+		<script>
+			var canvas = document.getElementById('canvas'),
+  context = canvas.getContext('2d');
+
+context.fillStyle = 'rgb(0,0,0)';
+context.lineWidth = 10;
+context.beginPath();
+context.moveTo(30, 50);
+context.lineTo(185, 50);
+context.stroke();
+context.moveTo(110, 50);
+context.lineTo(110, 170);
+context.stroke();
+context.moveTo(110, 170);
+context.arc(60,175,50,0,1*Math.PI);
+context.stroke();
+
+context.beginPath();
+context.moveTo(200, 45);
+context.lineTo(200, 228);
+context.stroke();
+context.moveTo(200, 50);
+context.lineTo(310, 50);
+context.stroke();
+context.moveTo(200, 133);
+context.lineTo(290, 133);
+context.stroke();
+context.moveTo(200, 223);
+context.lineTo(310, 223);
+context.stroke();
+
+context.beginPath();
+context.moveTo(330, 40);
+context.lineTo(330, 60);
+//context.arc(0,0,0,1*Math.PI);
+context.stroke();
+		</script>
+	</body>
 </html>
