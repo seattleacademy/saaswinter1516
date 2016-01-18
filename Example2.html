@@ -1,0 +1,35 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Winter 01</title>
+    <style>
+    body {
+        background: black;
+        color:gold;
+        font-size: 120px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    </style>
+    <script>
+    function updateTime() {
+        d = new Date();
+        document.getElementById("theTime").innerHTML =
+            d.toLocaleTimeString();
+    }
+    window.onload = setInterval(updateTime, 1000);
+    </script>
+</head>
+
+
+<body>
+    <div id="theTime">Hello World!</div>
+</body>
+
+</html>
