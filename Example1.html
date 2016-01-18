@@ -1,64 +1,126 @@
 
-
+<!DOCTYPE html>
 <html>
-    <head>  
-        <title>Winter 02</title>
-        <style>
-        @import url(http://www.1001fonts.com/loopy-font.html);
-        
-        body {
-            background-image: url("http://www.clipartbest.com/cliparts/9iz/E4R/9izE4R6zT.gif");
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-color: rgb(50,50,50);
-            color: white;
-            position: absolute;
-            top: 49%;
-            left: 49.60%;
-            transform: translate(-50%, 50%)
-        }
-        #theTime {
-            color: rgb(201,26,26);
-            font-family: 'loopy-font';
-            font-size:725%;
-            font-style: italic;
-            border-style: solid;
-            border-top-color: red;
-            border-bottom-color: red;
-            border-left-color: black;
-            border-right-color: black; 
-            border-top-width: 20px;
-            border-bottom-width: 20px;
-            border-left-width: 10px;
-            border-right-width: 10px;
-            
 
-    -webkit-animation: mymove 1.5s infinite; /* Chrome, Safari, Opera */
-    animation: mymove 1.5s infinite;
-}
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <title>CodePen - winter03 starter</title>
+    <style>
+    .clock {
+        width: 100%;
+        height: 100PX;
+        background: #FFFFFF;
+        text-align: center;
+    }
     
-      /* Chrome, Safari, Opera */
-       @-webkit-keyframes mymove {
-       75% {border-top-color: black;}
-       75% {border-bottom-color: black;}
-       75% {border-left-color: red;}
-       75% {border-right-color: red;}
-       }
+    #theHours {
+        color: #0000FF;
+        font-size: 300%;
+    }
+    
+    #theMinutes {
+        color: #01DF3A;
+        font-size: 300%;
+    }
+    
+    #theSeconds {
+        color: #6E6E6E;
+        font-size: 300%;
+    }
+    </style>
+</head>
 
+<body>
+    <div class="clock">
+        <span id="theHours">...</span>
+        <span id="divider1">:</span>
+        <span id="theMinutes">...</span>
+        <span id="divider2">:</span>
+        <span id="theSeconds">...</span>
+    </div>
+    <script>
+    function numToElement(num) {
+        //return num + "theTime";
+        //return num;
+        var elements = ["-" 
+                          ,"1"
+                          ,"10"
+                          ,"11"
+                          ,"100"
+                          ,"101"
+                          ,"110"
+                          ,"111"
+                          ,"1000"
+                          ,"1001"
+                          ,"1010"
+                          ,"1011"
+                          ,"1100"
+                          ,"1101"
+                          ,"1110"
+                          ,"1111"
+                          ,"10000"
+                          ,"10001"
+                          ,"10010"
+                          ,"10011"
+                          ,"10100"
+                          ,"10101"
+                          ,"10110"
+                          ,"10111"
+                          ,"11000"
+                          ,"11001"
+                          ,"11010"
+                          ,"11011"
+                          ,"11100"
+                          ,"11101"
+                          ,"11110"
+                          ,"11111"
+                          ,"100000"
+                          ,"100001"
+                          ,"100010"
+                          ,"100011"
+                          ,"100100"
+                          ,"100101"
+                          ,"100110"
+                          ,"100111"
+                          ,"101000"
+                          ,"101001"
+                          ,"101010"
+                          ,"101011"
+                          ,"101100"
+                          ,"101101"
+                          ,"101110"
+                          ,"101111"
+                          ,"110000"
+                          ,"110001"
+                          ,"110010"
+                          ,"110011"
+                          ,"110100"
+                          ,"110101"
+                          ,"110110"
+                          ,"110111"
+                          ,"111000"
+                          ,"111001"
+                          ,"111010"
+                          ,"111011"
+                          ,"111100"
+                         ];
+          elements.push("third");
+          return elements[num]; 
+}
+    function updateTime() {
+        d = new Date();
+        hours = d.getHours();
+        minutes = d.getMinutes();
+        seconds = d.getSeconds();
 
-        </style>
-        <script>
-        function updateTime() {
-            d = new Date();
-            document.getElementById("theTime").innerHTML =
-                d.toLocaleTimeString(/*{ hour12: false }*/);
-        }
-        window.onload = setInterval(updateTime, 1000);
-      </script>
-    </head>
+        document.getElementById("theHours").innerHTML = numToElement(hours);
+        document.getElementById("theMinutes").innerHTML = numToElement(minutes);
+        document.getElementById("theSeconds").innerHTML = numToElement(seconds);
+    }
+    window.onload = setInterval(updateTime, 1000);
+    //@ sourceURL=pen.js
+    </script>
+</body>
 
-    <body>
-       <div id="theTime"></div> </p>
-        </body>
 </html>

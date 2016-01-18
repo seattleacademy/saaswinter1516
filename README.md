@@ -1,2 +1,2 @@
-#Day 2
-Today we covered some CSS elements to start styling our html clocks.
+#Day 3
+Today we worked with JavaScript to enhance our digital clocks.
