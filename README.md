@@ -1,2 +1,2 @@
-#Day 8
-Today we worked on coundowns to events such as basketball mania or Christmas
+#Day 10
+Today we worked on enhancing our countdown clocks with CSS.

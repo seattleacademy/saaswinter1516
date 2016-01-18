@@ -1,36 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Winter 09</title>
+    <meta charset="UTF-8">
+    <title>Winter 10</title>
+    <style>
+    body {
+        text-align: center;
+        background: url(http://cdn.history.com/sites/2/2015/04/hith-father-christmas-lights-iStock_000029514386Large.jpg);
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    h1 {
+        color: #396;
+        font-weight: 100;
+        font-size: 40px;
+        margin: 40px 0px 20px;
+    }
+    
+    #clockdiv {
+        font-family: impact;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 70px;
+    }
+    
+    #clockdiv > div {
+        padding: 15px;
+        border-radius: 100px;
+        background: #009900;
+        display: inline-block;
+    }
+    
+    #clockdiv div > span {
+        padding: 20px;
+        border-radius: 100px;
+        background: #ff3333;
+        display: inline-block;
+    }
+    
+    .smalltext {
+        padding-top: 5px;
+        font-size: 15px;
+    }
+    </style>
 </head>
+
 <body>
-<audio id="fishing">
-  <source src="sounds/fishing.ogg" type="audio/ogg">
-  <source src="sounds/fishing.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-<button id="playsound">Play Sound</button>
-<div id="theTime">...</div>
 
+    <h1>Time Until Christmas</h1>
+    <div id="clockdiv">
+        <div>
+            <span class="days"></span>
+            <div class="smalltext">Days</div>
+        </div>
+        <div>
+            <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+        </div>
+        <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+        </div>
+    </div>
+    <script src="js/jquery.min.2.1.4.js"></script>
+    <script>
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.now();
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
 
-<script src="js/jquery-2.1.4.min.js"></script>
-<script>
-var deadline= "Dec 18 2015 12:00:00 GMT-0800";
-	function getDate(){
-		d = new Date();
-		$("#theTime").text(d);
-	}
-	getDate();
-	//setInterval(getDate,1000);
-	function playsound(){
-		$("#fishing")[0].play();
-	}
-	$("#playsound").click(playsound);
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
 
-</script>	
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
+
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    var deadline = "Dec 25 2015 12:00:00 GMT-0800";
+    initializeClock('clockdiv', deadline);
+    </script>
 </body>
-</html>
 
+</html>
 

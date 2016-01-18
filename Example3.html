@@ -1,365 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Winter 09</title>
-	<style>
-
-	div.titleBox2 {
-	position: absolute;	
-    top:28%;
-	left:39%;
-	}
-
-	div.titleBox2 p {
-  	margin: 2%;
-  	font-weight: bold;
-  	color:white;
-  	padding-top: 2px;
-    padding-right: 3px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-	}
-
-	div.titleBox {
-	position: absolute;	
-    top:39.8%;
-	left:42%;
-	}
-
-	div.titleBox p {
-  	margin: 2%;
-  	font-weight: bold;
-  	color:white;
-  	padding-top: 2px;
-    padding-right: 3px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-	}
-
-	div.textBox1 {
-	position: absolute;	
-	border-radius: 5px;
-    margin: 1px;
-    top:53.8%;
-	left:41.15%;
-	}
-
-	div.textBox1 p {
-  	margin: 2%;
-  	font-weight: bold;
-  	color:white;
-  	padding-top: 2px;
-    padding-right: 3px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-	}
-
-	div.textBox2 {
-	position: absolute;	
-	border-radius: 5px;
-    margin: 1px;
-    top:53.8%;
-	left:46.5%;
-	}
-
-	div.textBox2 p {
-  	margin: 2%;
-  	font-weight: bold;
-  	color:white;
-  	padding-top: 2px;
-    padding-right: 3px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-	}
-
-	div.textBox3 {
-	position: absolute;	
-	border-radius: 5px;
-    margin: 1px;
-    top:53.8%;
-	left:51.8%;
-	}
-
-	div.textBox3 p {
-  	margin: 2%;
-  	font-weight: bold;
-  	color:white;
-  	padding-top: 2px;
-    padding-right: 3px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-	}
-
-	div.textBox4 {
-	position: absolute;	
-	border-radius: 5px;
-    margin: 1px;
-    top:53.8%;
-	left:57.5%;
-	}
-
-	div.textBox4 p {
-  	margin: 2%;
-  	font-weight: bold;
-  	color:white;
-  	padding-top: 2px;
-    padding-right: 3px;
-    padding-bottom: 2px;
-    padding-left: 3px;
-	}
-
-	.dot1 {
-	position: absolute;	
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    border: solid 1px silver;
-    top:46%;
-	left:45.3%;
-	}
-
-	.dot2 {
-	position: absolute;	
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    border: solid 1px silver;
-    top:50%;
-	left:45.3%;
-	}
-
-	.dot3 {
-	position: absolute;	
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    border: solid 1px silver;
-    top:46%;
-	left:51.1%;
-	}
-
-	.dot4 {
-	position: absolute;	
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    border: solid 1px silver;
-    top:50%;
-	left:51.1%;
-	}
-
-	.dot5 {
-	position: absolute;	
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    border: solid 1px silver;
-    top:46%;
-	left:56.8%;
-	}
-
-	.dot6 {
-	position: absolute;	
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: black;
-    border: solid 1px silver;
-    top:50%;
-	left:56.8%;
-	}
-
-	.box {
-	position: absolute;	
-    width: 45px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: lavender;
-    border: solid 1px silver;
-    top:44.5%;
-	left:41.1%;
-	}
-
-	.box1 {
-	position: absolute;	
-    width: 45px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: lavender;
-    border: solid 1px silver;
-    top:44.5%;
-	left:46.8%;
-	}
-
-	.box3 {
-	position: absolute;	
-    width: 45px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: lavender;
-    border: solid 1px silver;
-    top:44.5%;
-	left:52.7%;
-	}
-
-
-	.box4 {
-	position: absolute;	
-    width: 45px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: lavender;
-    border: solid 1px silver;
-    top:44.5%;
-	left:58.2%;
-	}
-
-	.bigBox {
-	position: absolute;	
-    width: 400px;
-    height: 130px;
-    border-radius: 15px;
-    background-color: grey;
-    border: solid 1px silver;
-    box-shadow: 0px 3px 5px 1px silver;
-    top:37.5%;
-	left:36%;
-	}
-
-	#days {
-		position:absolute;
-		top:45%;
-		left:41.5%;
-		font-size: 40px;
-	}
-	#hours {
-		position:absolute;
-		top:45%;
-		left:47%;
-		font-size: 40px;
-	}
-	#minutes {
-		position:absolute;
-		top:45%;
-		left:53%;
-		font-size: 40px;
-	}
-	#seconds {
-		position:absolute;
-		top:45%;
-		left:58.5%;
-		font-size: 40px;
-	}
-
-	.dateAndTime {
-		position: absolute;
-		left:46%;
-		top:30%;
-	}
-
-	body {
-		background: url(http://www.planwallpaper.com/static/images/Cool-background-random-17506456-1869-1168.jpg);
-		width: 50px;
-		height: 50px;
-	}
-
-	</style>
+    <meta charset="UTF-8">
+    <title>Winter 10</title>
+    <!-- Based on code from http://codepen.io/SitePoint/pen/MwNPVq
+ -->
+    <style>
+    body {
+        text-align: center;
+        background: #00ECB9;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    h1 {
+        color: #396;
+        font-weight: 100;
+        font-size: 40px;
+        margin: 40px 0px 20px;
+    }
+    
+    #clockdiv {
+        font-family: sans-serif;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 30px;
+    }
+    
+    #clockdiv > div {
+        padding: 10px;
+        border-radius: 3px;
+        background: #00BF96;
+        display: inline-block;
+    }
+    
+    #clockdiv div > span {
+        padding: 15px;
+        border-radius: 3px;
+        background: #00816A;
+        display: inline-block;
+    }
+    
+    .smalltext {
+        padding-top: 5px;
+        font-size: 16px;
+    }
+    </style>
 </head>
+
 <body>
-<div class="bigBox"></div>
-<div class="titleBox2">
-	<p>Use This Format "Dec 18 2015 13:51:06 GMT-0800"</p>
-	</div>
-<div class="titleBox">
-	<p>Winter Sports Mania Is Coming In</p>
-	</div>
-<div class="textBox1">
-	<p> Days </p>
-</div>
-<div class="textBox2">
-	<p> Hours </p>
-</div>
-<div class="textBox3">
-	<p> Minutes </p>
-</div>
-<div class="textBox4">
-	<p> Seconds </p>
-</div>
-<div class="countdown">
-    <p class="dateAndTime">
-    <input type="text" id="input-number">
-    <button>Go!</button></p>
-    <span class="Date"></span>
-</div>
-<div class="dot6"></div>
-<div class="dot5"></div>
-<div class="dot4"></div>
-<div class="dot3"></div>
-<div class="dot2"></div>
-<div class="dot1"></div>
-<div class="box"></div>
-<div class="box1"></div>
-<div class="box3"></div>
-<div class="box4"></div>
-<audio id="freewill">
-  <source src="sounds/freewill.ogg" type="audio/ogg">
-  <source src="sounds/freewill.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-<div id="theTime">...</div>
-<div id="seconds">...</div>
-<div id="minutes">...</div>
-<div id="hours">...</div>
-<div id="days">...</div>
+    <audio id="quack" controls>
+        <source src="" type="audio/mpeg"> Your browser does not support the audio element.
+    </audio>
+    <h1>Count Down to Christmas!</h1>
+    <div id="clockdiv">
+        <div>
+            <span class="days"></span>
+            <div class="smalltext">Days</div>
+        </div>
+        <div>
+            <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+        </div>
+        <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.now();
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
 
-<script src="js/jquery-2.1.4.min.js"></script>
-<script>
-var deadline= "Dec 18 2015 13:51:06 GMT-0800";
+    function initializeClock(id, endtime) {
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
 
-function getTimeRemaining(endtime){
-  var t = Date.parse(endtime) - Date.now();
-  var seconds = Math.floor( (t/1000) % 60 );
-  var minutes = Math.floor( (t/1000/60) % 60 );
-  var hours = Math.floor( (t/(1000*60*60)) % 24 );
-  var days = Math.floor( t/(1000*60*60*24) );
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
-	function getDate(){
-		d = new Date();
-		$("#theTime").text(d);
-		remaining = getTimeRemaining(deadline);
-		//console.log(remaining);
-		$("#seconds").text(remaining.seconds);
-		$("#minutes").text(remaining.minutes);
-		$("#hours").text(remaining.hours);
-		$("#days").text(remaining.days);
-	}
-	getDate();
-	setInterval(getDate,1000);
-	function playsound(){
-		$("#freewill")[0].play();
-	}
-	//$("#playsound").click(playsound);
+        function updateClock() {
+            var t = getTimeRemaining(endtime);
 
-	$("#input-number").change(function() {
-  	//alert( "Handler for .change() called." );
-  	deadline=$("#input-number").val();
-  	console.log ("deadline",deadline);
-	});
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-</script>	
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        var timeinterval = setInterval(updateClock, 1000);
+    }
+
+    function playsound() {
+        $("#quack")[0].play();
+    }
+    var deadline = "Dec 25 2015 12:00:00 GMT-0800";
+    initializeClock('clockdiv', deadline);
+    </script>
 </body>
-</html>
 
+</html>
