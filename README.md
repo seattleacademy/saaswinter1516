@@ -1,2 +1,2 @@
-#Day 6
-Toady we used the canvas feature used on Day 5 to make an analog clock.
+#Day 7
+Toady we used the canvas feature and our CSS / JavaScript knowledge to  make an analog clock.
