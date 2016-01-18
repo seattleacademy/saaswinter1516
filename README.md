@@ -1,2 +1,2 @@
-#Day 1
-This day was the introduction to HTML, CSS, and JavaScript. We worked on making digital clocks with JQuery and HTML.
+#Day 2
+Today we covered some CSS elements to start styling our html clocks.

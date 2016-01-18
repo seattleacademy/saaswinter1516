@@ -1,31 +1,64 @@
 
-<!DOCTYPE html>
+
 <html>
+    <head>  
+        <title>Winter 02</title>
+        <style>
+        @import url(http://www.1001fonts.com/loopy-font.html);
+        
+        body {
+            background-image: url("http://www.clipartbest.com/cliparts/9iz/E4R/9izE4R6zT.gif");
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-color: rgb(50,50,50);
+            color: white;
+            position: absolute;
+            top: 49%;
+            left: 49.60%;
+            transform: translate(-50%, 50%)
+        }
+        #theTime {
+            color: rgb(201,26,26);
+            font-family: 'loopy-font';
+            font-size:725%;
+            font-style: italic;
+            border-style: solid;
+            border-top-color: red;
+            border-bottom-color: red;
+            border-left-color: black;
+            border-right-color: black; 
+            border-top-width: 20px;
+            border-bottom-width: 20px;
+            border-left-width: 10px;
+            border-right-width: 10px;
+            
 
-<head>
-    <title>Winter 01</title>
-    <style>
-    body {
-        background: green;
-        color: white;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)
-    }
-    </style>
-    <script>
-    function updateTime() {
-        d = new Date();
-        document.getElementById("theTime").innerHTML =
-            d.toLocaleTimeString();
-    }
-    window.onload = setInterval(updateTime, 1000);
-    </script>
-</head>
+    -webkit-animation: mymove 1.5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 1.5s infinite;
+}
 
-<body>
-    <div id="theTime">Hello World!</div>
-</body>
+    
+      /* Chrome, Safari, Opera */
+       @-webkit-keyframes mymove {
+       75% {border-top-color: black;}
+       75% {border-bottom-color: black;}
+       75% {border-left-color: red;}
+       75% {border-right-color: red;}
+       }
 
+
+        </style>
+        <script>
+        function updateTime() {
+            d = new Date();
+            document.getElementById("theTime").innerHTML =
+                d.toLocaleTimeString(/*{ hour12: false }*/);
+        }
+        window.onload = setInterval(updateTime, 1000);
+      </script>
+    </head>
+
+    <body>
+       <div id="theTime"></div> </p>
+        </body>
 </html>

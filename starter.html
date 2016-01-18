@@ -1,29 +1,41 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Winter 01</title>
+    <title>Winter 02</title>
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
     body {
-        background: yellow;
+        background-image: url("http://dancemusicnw.com/wp-content/uploads/2015/10/seattle-at-night.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #363636;
+        background-position: center;
+        color: white;
         position: absolute;
-        top: 50%;
+        top: 25%;
         left: 50%;
         transform: translate(-50%, -50%)
+    }
+    
+    #theTime {
+        color: brown;
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 1000%;
+        font-style: normal;
     }
     </style>
     <script>
     function updateTime() {
         d = new Date();
         document.getElementById("theTime").innerHTML =
-            d.toLocaleTimeString();
+            d.toLocaleTimeString( /*{ hour12: false }*/ ).replace(' AM', '').replace(' PM', '');
     }
     window.onload = setInterval(updateTime, 1000);
     </script>
 </head>
 
 <body>
-    <div id="theTime">Hello World!</div>
+    <div id="theTime"></div>
 </body>
 
 </html>

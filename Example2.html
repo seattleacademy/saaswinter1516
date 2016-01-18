@@ -1,35 +1,44 @@
-
-
-
-<!DOCTYPE html>
 <html>
-
-<head>
-    <title>Winter 01</title>
-    <style>
-    body {
-        background: black;
-        color:gold;
-        font-size: 120px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)
-    }
-    </style>
-    <script>
-    function updateTime() {
-        d = new Date();
-        document.getElementById("theTime").innerHTML =
-            d.toLocaleTimeString();
-    }
-    window.onload = setInterval(updateTime, 1000);
-    </script>
-</head>
-
-
-<body>
-    <div id="theTime">Hello World!</div>
-</body>
-
+    <head>
+        <title>Aidan Patrick</title>
+        <style>
+        @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+        body {
+            background-image: url("http://dancemusicnw.com/wp-content/uploads/2015/10/seattle-at-night.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #363636;
+            background-position: center;
+            color: white;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+        #theTime {
+            color: brown;
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 1000%;
+            width: 500px;
+            font-style: normal;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </style>
+        <script>
+        function updateTime() {
+            d = new Date();
+            document.getElementById("theTime").innerHTML =
+                d.toLocaleTimeString(/*{ hour12: false }*/).replace(' AM','').replace(' PM','');
+        function chemTime(num){
+            morse = new array ("-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.");
+            return morse [num];
+        }
+        }
+        window.onload = setInterval(updateTime, 1000);
+      </script>
+    </head>
+    <body>
+        <div id="theTime"></div>
+    </body>
 </html>
