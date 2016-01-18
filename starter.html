@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="google" value="notranslate">
-    <title>Winter 03</title>
+    <title>Winter 04</title>
     <style>
     .clock {
         width: 100%;
@@ -13,51 +11,31 @@
         text-align: center;
     }
     
-    #theHours {
+    #swatchTime {
         color: #FF0000;
-    }
-    
-    #theMinutes {
-        color: #00FF00;
-    }
-    
-    #theSeconds {
-        color: #0000FF;
+        font-size: 300%;
     }
     </style>
-</head>
-
-<body>
-    <div class="clock">
-        <span id="theHours">...</span>
-        <span id="divider1">:</span>
-        <span id="theMinutes">...</span>
-        <span id="divider2">:</span>
-        <span id="theSeconds">...</span>
-    </div>
     <script>
-    function numToElement(num) {
-        return num;
-        /*  var elements = ["-" 
-                          ,"H"
-                          ,"H2"
-                         ];
-          elements.push("third");
-          return elements[num] + " - " + num;*/
-    }
-
     function updateTime() {
         d = new Date();
         hours = d.getHours();
         minutes = d.getMinutes();
         seconds = d.getSeconds();
-        document.getElementById("theHours").innerHTML = hours;
-        document.getElementById("theMinutes").innerHTML = minutes;
-        document.getElementById("theSeconds").innerHTML = numToElement(seconds);
+        totalSeconds = seconds + minutes * 60 + hours * 3600;
+        dayFraction = totalSeconds / (86000);
+        swatchTime = dayFraction * 1000;
+        swatchTime = '@' + swatchTime.toFixed(2);
+        document.getElementById("swatchTime").innerHTML = swatchTime;
     }
     window.onload = setInterval(updateTime, 1000);
-    //@ sourceURL=pen.js
     </script>
+</head>
+
+<body>
+    <div class="clock">
+        <span id="swatchTime">...</span>
+    </div>
 </body>
 
 </html>
