@@ -1,72 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Winter 08</title>
-    <style>
-		#seconds{
-			background: yellow;
-			height: 30px;
-			width: 20%;
-		}
-		#minutes{
-			background: red;
-			height: 30px;
-			width: 20px;
-		}
-		#hours{
-			background: orange;
-			height: 30px;
-			width: 20px;
-		}
-    </style>
+    <title>Winter 09</title>
 </head>
 
 <body>
-    <div id="myTime">
-	Seconds:
-	<div id="seconds">...</div>
-</div>
-
-<div id="myTime">
-	Minutes:
-	<div id="minutes">...</div>
-</div>
-	
-	<div id="myTime">
-	Hours:
-	<div id="hours">...</div>
-</div>
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <h2>Counter to Basketeball Mania!</h2>
+    <div id="timeRemaining">...</div>
+    minutes: <div id="minutes">...</div>
+    seconds: <div id="seconds">...</div>
+    <audio id="freewill">
+        <source src="sounds/freewill.ogg" type="audio/ogg">
+        <source src="sounds/freewill.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+    </audio>
+    <button id="playsound">Play freewill</button>
+    <script src="js/jquery-2.1.4.min.js"></script>
     <script>
-    function drawClock() {
-        d = new Date();
-        seconds = d.getSeconds();
-        perSeconds = seconds/60 * 100;
+    var deadline = "Dec 18 2015 12:00:00 GMT-0800";
 
-        minutes = d.getMinutes();
-        perMinutes = minutes/60 * 100;
-
-        hours = d.getHours();
-        perHours = hours/60 * 100;
-
-        console.log("perSeconds",perSeconds);
-        $("#seconds").width(perSeconds + "%")
-        $("#seconds").text(seconds);
-
-        $("#minutes").width(perMinutes + "%")
-        $("#minutes").text(minutes);
-
-        $("#hours").width(perHours + "%")
-        $("hours").text(hours);
+    function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.now();
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
     }
-    drawClock();
-    setInterval(drawClock,1000);
 
+    function getDate(){
+        remaining = getTimeRemaining(deadline);
+        minutes = remaining.minutes;
+        $("#minutes").text(minutes);
+        seconds = remaining.seconds;
+        $("#seconds").text(minutes);
+    }
+    setInterval(getDate,1000);
+    function placetime() {
+        d = new Date();
+        $("#timeRemaining").text(d);
+    }
+
+    placetime();
+
+    function playsound() {
+        $("#freewill").trigger("play");
+    }
+    $("playsound").click("playsound");
     </script>
 </body>
 
 </html>
+
