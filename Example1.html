@@ -1,8 +1,14 @@
 
+
 <!DOCTYPE html>
 <html>
   <meta charset=UTF-8>
-  <head>Mathy, Math, Math.</head>
+  <head><div class="progress">
+  <div id="myprogress" class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+
+  </div>
+</div></head>
 
     <title>Winter 12</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -11,10 +17,10 @@
 
     <script>
       $(document).ready(function() {
-      	shuffleMe();
+        shuffleMe();
       $('input').attr('size',7);
 
-      var count = 180
+      var count = 120
       var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
       function timer() {
       count = count - 1;
@@ -22,7 +28,7 @@
       if (count <= 0) {
       clearInterval(counter);
       //alert("Times up!")
-      $("#timesUp").text("The Timeth is Upeth!");
+      $("#timesUp").text("Oh Boy, Yo time is up!");
       return;
       }
 
@@ -41,7 +47,7 @@
       });
 
       $('#shuffle').click(function() {
-      	console.log ("shuffle");
+        console.log ("shuffle");
       shuffleMe();
             });
 
@@ -87,7 +93,10 @@
       numerrors = $('#errors').text();
       $('#errors').text(numerrors*1+1);
       }
-
+      percent=numcorrect/36*100;
+      console.log(percent);
+      $("#myprogress").css('width', percent+'%');
+      //jQuery('#myprogress').animate({width:percent+'%'});
       });
       });
 
@@ -151,167 +160,149 @@
   <body>
     <div class="container">
       <div id="score">
-	<strong>Correct:</strong> <span class="score" id="correct">0</span>
-	<strong>Errors:</strong>  <span class="score" id="errors">0</span>
-	<strong>Time:</strong> <span class="score" id="elapsedtime">0</span>
-	<span id="timesUp">...</span>
+    <strong>Correct:</strong> <span class="score" id="correct">0</span>
+    <strong>Errors:</strong>  <span class="score" id="errors">0</span>
+    <strong>Time:</strong> <span class="score" id="elapsedtime">0</span>
+    <span id="timesUp">...</span>
       </div>
 
       <div class="row">
-	<div class="col-xs-10 col-xs-offset-1">
-	  <div id="quiz">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div id="quiz">
 
-	    <h3>Answer the following questions:</h3>
+        <h3>Answer the following questions:</h3>
 
-	    <div class="body">
+        <div class="body">
 
-	      <div id="row">
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p><input data-correct ="4" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 64^\tfrac{5}{6} \)<input data-correct ="32" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 64^\tfrac{-3}{2} \)<input data-correct ="" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^3 \)<input data-correct ="8" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^4 \)<input data-correct ="16" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^5 \)<input data-correct ="32" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^6 \)<input data-correct ="64" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^7 \)<input data-correct ="128" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^8 \)<input data-correct ="256" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^9 \)<input data-correct ="512" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 2^{10} \)<input data-correct ="1024" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^0 \)<input data-correct ="1" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^1 \)<input data-correct ="3" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^2 \)<input data-correct ="9" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^3 \)<input data-correct ="27" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^4 \)<input data-correct ="81" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^5 \)<input data-correct ="243" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 3^6 \)<input data-correct ="729" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 4^0 \)<input data-correct ="1" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 4^2 \)<input data-correct ="16" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 4^3 \)<input data-correct ="64" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 4^4 \)<input data-correct ="256" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 4^5 \)<input data-correct ="1024" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 5^2 \)<input data-correct ="25" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 5^3 \)<input data-correct ="125" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 5^4 \)<input data-correct ="625" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 6^2 \)<input data-correct ="36" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 6^3 \)<input data-correct ="216" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 7^2 \)<input data-correct ="49" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 7^3 \)<input data-correct ="343" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 8^2 \)<input data-correct ="64" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 8^3 \)<input data-correct ="512" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 9^2 \)<input data-correct ="81" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 9^3 \)<input data-correct ="729" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 10^2 \)<input data-correct ="100" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 10^3 \)<input data-correct ="1000" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 11^2 \)<input data-correct ="121" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 11^3 \)<input data-correct ="1331" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 12^2 \)<input data-correct ="144" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 12^3 \)<input data-correct ="1728" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 13^2 \)<input data-correct ="169" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 14^2 \)<input data-correct ="196" type="text"/><span></span></p>
-		</div>
-		<div class="col-md-3 col-sm-4 col-xs-6 input">
-		  <p>\( 15^2 \)<input data-correct ="225" type="text"/><span></span></p>
-		</div>
+          <div id="row">
+        <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{1}\)<input data-correct ="1" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{2}\)<input data-correct ="2" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{3}\)<input data-correct ="3" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{4}\)<input data-correct ="4" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{5}\)<input data-correct ="5" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{6}\)<input data-correct ="6" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{7}\)<input data-correct ="7" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{8}\)<input data-correct ="8" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{9}\)<input data-correct ="9" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{10}\)<input data-correct ="10" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{11}\)<input data-correct ="11" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(1\times{12}\)<input data-correct ="12" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{1}\)<input data-correct ="2" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{2}\)<input data-correct ="4" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{3}\)<input data-correct ="6" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{4}\)<input data-correct ="8" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{5}\)<input data-correct ="10" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{6}\)<input data-correct ="12" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{7}\)<input data-correct ="14" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{8}\)<input data-correct ="16" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{9}\)<input data-correct ="18" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{10}\)<input data-correct ="20" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{11}\)<input data-correct ="22" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(2\times{12}\)<input data-correct ="24" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{1}\)<input data-correct ="3" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{2}\)<input data-correct ="6" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{3}\)<input data-correct ="9" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{4}\)<input data-correct ="12" type="text"/><span></span></p>
+                            </div>                    
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{5}\)<input data-correct ="15" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{6}\)<input data-correct ="18" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{7}\)<input data-correct ="21" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{8}\)<input data-correct ="24" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{9}\)<input data-correct ="27" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{10}\)<input data-correct ="30" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{11}\)<input data-correct ="33" type="text"/><span></span></p>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6 input">
+                                <p>\(3\times{12}\)<input data-correct ="36" type="text"/><span></span></p>
+        </div>
 
-	      </div>
-	      <div class="row">
-		<div class="col-xs-12 botton">
-		  <button type="button" id="reset" class="btn btn-primary" autocomplete="off">Reset</button>
-		  <!--<button type="button" id="shuffle" class="btn btn-primary" autocomplete="off">Shuffle</button>-->
-		</div>
-		<div class="row">
-		<div class="col-xs-12 botton">
-		  <button type="button" id="shuffle" class="btn btn-primary" autocomplete="on">Shuffle</button>
+          </div>
+          <div class="row">
+        <div class="col-xs-12 botton">
+          <button type="button" id="reset" class="btn btn-primary" autocomplete="off">Reset</button>
+          <!--<button type="button" id="shuffle" class="btn btn-primary" autocomplete="off">Shuffle</button>-->
+        </div>
+        <div class="row">
+        <div class="col-xs-12 botton">
+          <button type="button" id="shuffle" class="btn btn-primary" autocomplete="on">Shuffle</button>
 
-		  <!--<button type="button" id="shuffle" class="btn btn-primary" autocomplete="off">Shuffle</button>-->
-		</div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+          <!--<button type="button" id="shuffle" class="btn btn-primary" autocomplete="off">Shuffle</button>-->
+
+  </div>
+</div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
     </div>
 
