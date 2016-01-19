@@ -4,126 +4,91 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Winter 10</title>
-    <!-- Based on code from http://codepen.io/SitePoint/pen/MwNPVq
- -->
+    <title>winter 11</title>
     <style>
-    body {
-        text-align: center;
-        background: url(https://usatthebiglead.files.wordpress.com/2013/03/benmc-dunk2.gif?w=1000);
-        font-family: sans-serif;
-        font-weight: 100;
+    .correct {
+        background: green;
     }
     
-    h1 {
-        color: #396;
-        font-weight: 100;
-        font-size: 40px;
-        margin: 40px 0px 20px;
-    }
-
-    #clockdiv {
-        font-family: sans-serif;
-        color: rgb(0,0,0);
-        display: inline-block;
-        font-weight: 100;
-        text-align: center;
-        font-size: 30px;
+    .incorrect {
+        background: red;
     }
     
-    #clockdiv > div {
-        padding: 10px;
-        border-radius: 3px;
-        background: rgb(255,0,0);
-        display: inline-block;
-    }
-    
-    #clockdiv div > span {
-        padding: 15px;
-        border-radius: 3px;
-        background: rgb(50,50,50);
-        display: inline-block;
-    }
-    
-    .smalltext {
-        padding-top: 10px;
-        font-size: 38px;
+    #score {
+        border: 2px dashed olive;
     }
     </style>
 </head>
 
 <body>
-    <h1>Count Down to BasketBall Mania!</h1>
-    <div id="clockdiv">
-        <div>
-            <span class="days"></span>
-            <div class="smalltext">Days</div>
+    <div class="container">
+        <div id="score">Correct: <span id="correct">0</span> Errors: <span id="errors">0</span>
         </div>
-        <div>
-            <span class="hours"></span>
-            <div class="smalltext">Hours</div>
-            <audio id="freewill">
-  <!-- <source src="sounds/freewill.ogg" type="audio/ogg"> -->
-  <source src="sounds/freewill.mp3" type="audio/mpeg">
-</audio>
-        </div>
-        <button id="playsound">Play Sound</button>
-        <div>
-            <span class="minutes"></span>
-            <div class="smalltext">Minutes</div>
-        </div>
-        <div>
-            <span class="seconds"></span>
-            <div class="smalltext">Seconds</div>
-        </div>
+        <h2>Answer the following questions:</h2>
+        <p>\(3^0\)
+            <input data-correct="1" type="text" /><span></span>
+        </p>
+        <p>\( \sqrt{64}\) =
+            <input data-correct="8" type="text" /><span></span>
+        </p>
+        <p>\( \sqrt[5]{32}\) =
+            <input data-correct="2" type="text" /><span></span>
+        </p>
+        <p>\(9^\tfrac{1}{2}\)
+            <input data-correct="3" type="text" /><span></span>
+        </p>
+
+        <p>\(27^\tfrac{-2}{3}\)
+            <input data-correct="1/9" type="text" /><span></span>
+        </p>
+        <p>\(36 \div 4\)
+            <input data-correct="9" type="text" /><span></span>
+
+                   </p>
+                <p>\(\tfrac{frozen}{apples}\)
+            <input data-correct="it doesn't matter" type="text" /><span></span>
+        </p>
+
+        <p>\(\begin{cases}
+ x - 2y + 4z &= 2\\
+ - 2y + 4z &= 2 \\
+-6x + 3y + 2z &= 3
+\end{cases}\)
+        y=      
+            <input data-correct="3/2" type="text" /><span></span>
+        </p>
+
+
     </div>
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <h2>Entering Math Notation</h2>
+    <p>You may find <a href="https://meta.wikimedia.org/wiki/Help:Displaying_a_formula">
+        https://meta.wikimedia.org/wiki/Help:Displaying_a_formula</a> helpful, but rather than the &lt;math&gt; tag:</p>
+    <p> open the expression with &#92;&#40;</p>
+    <p> Close the expression with &#92;&#41;</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js">
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     <script>
-    function getTimeRemaining(endtime) {
-        var t = Date.parse(endtime) - Date.now();
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-        return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
-        };
-    }
+    $(document).ready(function() {
+        $('input').change(function() {
 
-    function initializeClock(id, endtime) {
-        var clock = document.getElementById(id);
-        var daysSpan = clock.querySelector('.days');
-        var hoursSpan = clock.querySelector('.hours');
-        var minutesSpan = clock.querySelector('.minutes');
-        var secondsSpan = clock.querySelector('.seconds');
+            correct = $(this).data('correct');
+            response = $(this).val();
 
-        function updateClock() {
-            var t = getTimeRemaining(endtime);
-
-            daysSpan.innerHTML = t.days;
-            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-                function playsound(){
-        $("#freewill")[0].play();
-    }
-    $("#playsound").click(playsound);
-
-            if (t.total <= 0) {
-                clearInterval(timeinterval);
+            if (correct == response) {
+                $(this).removeClass("incorrect").addClass("correct");
+                numcorrect = $('#correct').text();
+                //We multiply by 1 change from type text to number
+                $('#correct').text(numcorrect * 1 + 1);
+            } else {
+                $(this).removeClass("correct").addClass("incorrect");
+                numerrors = $('#errors').text();
+                $('#errors').text(numerrors * 1 + 1);
             }
-        }
 
-        updateClock();
-        var timeinterval = setInterval(updateClock, 1000);
-    }
-
-    var deadline = "Dec 18 2015 12:00:00 GMT-0800";
-    initializeClock('clockdiv', deadline);
+        });
+    });
     </script>
 </body>
 

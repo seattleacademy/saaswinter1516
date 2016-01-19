@@ -1,120 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Winter 10</title>
+    <title>Winter 11</title>
     <style>
-    body {
-        text-align: center;
-        background: url(http://cdn.history.com/sites/2/2015/04/hith-father-christmas-lights-iStock_000029514386Large.jpg);
-        font-family: sans-serif;
-        font-weight: 100;
+    .correct {
+        background: green;
     }
     
-    h1 {
-        color: #396;
-        font-weight: 100;
-        font-size: 40px;
-        margin: 40px 0px 20px;
+    .incorrect {
+        background: red;
     }
     
-    #clockdiv {
-        font-family: impact;
-        color: #fff;
-        display: inline-block;
-        font-weight: 100;
-        text-align: center;
-        font-size: 70px;
-    }
-    
-    #clockdiv > div {
-        padding: 15px;
-        border-radius: 100px;
-        background: #009900;
-        display: inline-block;
-    }
-    
-    #clockdiv div > span {
-        padding: 20px;
-        border-radius: 100px;
-        background: #ff3333;
-        display: inline-block;
-    }
-    
-    .smalltext {
-        padding-top: 5px;
-        font-size: 15px;
+    #score {
+        border: 2px dashed olive;
     }
     </style>
 </head>
 
 <body>
-
-    <h1>Time Until Christmas</h1>
-    <div id="clockdiv">
-        <div>
-            <span class="days"></span>
-            <div class="smalltext">Days</div>
+    <div class="container">
+        <div id="score">Correct: <span id="correct">0</span> Errors: <span id="errors">0</span>
         </div>
-        <div>
-            <span class="hours"></span>
-            <div class="smalltext">Hours</div>
-        </div>
-        <div>
-            <span class="minutes"></span>
-            <div class="smalltext">Minutes</div>
-        </div>
-        <div>
-            <span class="seconds"></span>
-            <div class="smalltext">Seconds</div>
-        </div>
+        <h2> Answer the following questions: </h2>
+        <p>\(3^0\)
+            <input data-correct="1" type="text" /><span></span>
+        </p>
+        <p>\( \sqrt{64}\) =
+            <input data-correct="8" type="text" /><span></span>
+        </p>
+        <p>\( \sqrt[5]{32}\) =
+            <input data-correct="2" type="text" /><span></span>
+        </p>
+        <p>\(9^\tfrac{1}{2}\)
+            <input data-correct="3" type="text" /><span></span>
+        </p>
+         <p>\(27^\tfrac{-2}{3}\)
+            <input data-correct="1/9" type="text" /><span></span>
+        </p>
     </div>
-    <script src="js/jquery.min.2.1.4.js"></script>
-    <script>
-    function getTimeRemaining(endtime) {
-        var t = Date.parse(endtime) - Date.now();
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-        return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
-        };
-    }
+    <h2>Entering Math Notation</h2>
+    <p>You may find <a href="https://meta.wikimedia.org/wiki/Help:Displaying_a_formula">
+        https://meta.wikimedia.org/wiki/Help:Displaying_a_formula</a> helpful, but rather than the &lt;math&gt; tag:</p>
+    <p> open the expression with &#92;&#40;</p>
+    <p> Close the expression with &#92;&#41;</p>
 
-    function initializeClock(id, endtime) {
-        var clock = document.getElementById(id);
-        var daysSpan = clock.querySelector('.days');
-        var hoursSpan = clock.querySelector('.hours');
-        var minutesSpan = clock.querySelector('.minutes');
-        var secondsSpan = clock.querySelector('.seconds');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js">
+	
+</script>
 
-        function updateClock() {
-            var t = getTimeRemaining(endtime);
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script src="js/genRandExp.js"></script>
+<script>
+function stripStr(str){
+    var regex = new RegExp("(\D+)");
+    var res = str.replace(regex,"");
+    return res;
+}
+$(document).ready(function() {
+    $('input').change(function () {
 
-            daysSpan.innerHTML = t.days;
-            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-            if (t.total <= 0) {
-                clearInterval(timeinterval);
-            }
+        var correct = $(this).data('correct');
+        var response = Number(stripStr($(this).val(),toString()));
+        console.log(response);
+        if (correct == response) {
+            $(this).removeClass("incorrect").addClass("correct");
+            numcorrect = $('#correct').text();
+            //We multiply by 1 change from type text to number
+            $('#correct').text(numcorrect * 1 + 1);
+        } else {
+            $(this).removeClass("correct").addClass("incorrect");
+            numerrors = $('#errors').text();
+            $('#errors').text(numerrors * 1 + 1);
         }
 
-        updateClock();
-        var timeinterval = setInterval(updateClock, 1000);
-    }
+    });
+});
 
-    var deadline = "Dec 25 2015 12:00:00 GMT-0800";
-    initializeClock('clockdiv', deadline);
-    </script>
+</script>
+
 </body>
 
 </html>
-
