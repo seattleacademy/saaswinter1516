@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Projects</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -14,14 +14,35 @@
       border-radius: 0;
     }
     
-    /* Add a gray background color and some padding to the footer */
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      //background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
     footer {
-	  background-color: #f2f2f2;
-      padding: 25px;
+      background-color: #555;
+      color: white;
+      padding: 15px;
     }
-    body {
-      font-family: Arial;
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
     }
+
+    /*#emacsLogo {
+      width: 5000px;
+    }*/
   </style>
 </head>
 <body>
@@ -34,69 +55,41 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">My Teachers this year</a>
+      <!--<a class="navbar-brand" href=""><img id="emacsLogoSmall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/EmacsIcon.svg/100px-EmacsIcon.svg.png" /></a>-->
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#">About Emacs</a></li>
+        <!--<li><a href="#">Emacs For Lyfe</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>-->
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <!--<ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+      </ul>-->
     </div>
   </div>
 </nav>
-
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>Software Projects</h1>      
-    <p></p>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="winter17.html">Home</a></p>
+      <!--<p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>-->
+    </div>
+    <div class="col-sm-8 text-left">
+      <img style="width:25%" src="https://www.iit.bme.hu/~salvi/archive/texts/emacs.png"/>
+      <h1>What Even is <i>Emacs</i>?</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <hr>
+      <h3>Editor Comparison</h3>
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-2 sidenav">
+    </div>
   </div>
 </div>
-  
-<div class="container-fluid bg-3 text-center">    
-  <h3>Some Software Work</h3><br>
-  <div class="row">
-    <div class="col-sm-6 col-lg-6">
-      <h1>brainfplusplus</h1>
-      <p> Recently, I wrote an interpreter for the Brainf**k language, a simple esoteric array-based language Create by Swiss Physics student Urban Mueller. It was written in C++, and it will run any brainf**k program (No Guarantees as to how fast). Brainf**k is a Turing complete Language. </p>
-      <a href="https://github.com/adamperlin/brainfplusplus">
-      <img src="pathtoimage">
-      </a>
-      </div>
-      <div class = "col-sm-6 col-lg-6">
-       <h1>CsCalc</h1>
-      <p> Another Project I have written recently is a windows forms calculator which can parse and solve mathematical expressions. It is written in C#, and I wrote in order to start learning the languae. I have some goals for it in the future, I think it would be cool to add a graphing aspect to it, and support for more advanced equation parsing. </p>
-      <a href="https://github.com/adamperlin/CsCalc">
-      <img src="pathtoimage">
-      </a>
-      </div>
-  </div>
-</div><br>
-
-<div class="container-fluid bg-3 text-center">    
-  <div class="row">
-    <div class="col-sm-3">
-      <p>This is Jason, my English teacher and a lover of literature</p>
-      <img src="img/jason.jpg" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>This is steve retz, a trained historian and my history teacher</p>
-      <img src="img/steve.jpg" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br><br>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
