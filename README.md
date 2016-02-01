@@ -1,2 +1,2 @@
-#Day 12
-Today we worked on interactive math worksheets that have a time restraint.
+#Day 14
+Today we worked on cleaning up the Seattle Academy faculty bio page.

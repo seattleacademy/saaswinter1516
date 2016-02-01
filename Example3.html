@@ -1,175 +1,169 @@
-
 <!DOCTYPE html>
-<html>
-<meta charset=UTF-8>
-<title>Simplify Fractional Powers</title>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-$(document).ready(function() {
-    //shuffleMe();
-    $('input').attr('size', 7);
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
 
-    var count = 120
-    var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
-    function timer() {
-        $('.MathJax').attr("tabindex", -1); //Keeps MathJax objects from being tabable
-        count = count - 1;
-
-        if (count < 0) {
-            //clearInterval(counter);
-            $("#timesUp").text("Times up!");
-            //return;
-        }
-
-        $("#elapsedtime").html(count);
-    }
-
-    $('#reset').click(function() {
-        $('input').val("");
-        $('input').removeClass("correct");
-        $('input').removeClass("incorrect");
-        count = 0
-        $('#errors').text(0);
-        $('#correct').text(0);
-    });
-
-    $('#shuffle').click(function() {
-        shuffleMe();
-    });
-
-
-    $('input').change(function() {
-
-        correct = $(this).data('correct');
-        response = $(this).val();
-
-        if (correct == response) {
-            $(this).removeClass("incorrect").addClass("correct");
-            numcorrect = $('#correct').text();
-            //We multiply by 1 change from type text to number
-            $('#correct').text(numcorrect * 1 + 1);
-        } else {
-            $(this).removeClass("correct").addClass("incorrect");
-            numerrors = $('#errors').text();
-            $('#errors').text(numerrors * 1 + 1);
-        }
-
-    });
-});
-
-
-function shuffleMe() {
-    console.log('shuffle');
-    var parent = $("#quiz");
-    var divs = parent.children();
-    while (divs.length) {
-        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-    }
-};
-</script>
-<style>
-.correct {
-    background: #90EE90;
-}
-
-.incorrect {
-    background: #ED9090;
-}
-
-#score {
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 10px;
-    border: 2px solid gray;
-    background: rgb(234, 255, 252);
-}
-
-.score {
-    margin-right: 7px;
+			<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
 }
 </style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.driving-school.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='essential-grid-plugin-settings-css'  href='https://www.driving-school.com/wp-content/plugins/essential-grid/public/assets/css/settings.css?ver=2.0.5' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-raleway-css'  href='https://fonts.googleapis.com/css?family=Raleway%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-droid-serif-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C700&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='https://www.driving-school.com/wp-content/plugins/revslider/rs-plugin/css/settings.css?ver=4.6.3' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style>
+<link rel='stylesheet' id='wpsl-styles-css'  href='https://www.driving-school.com/wp-content/plugins/wp-store-locator/css/styles.min.css?ver=2.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/bootstrap.min.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-custom-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/bootstrap-custom.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='https://www.driving-school.com/wp-content/themes/themize/style.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='elements-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/elements.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='scripts-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/scripts.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://www.driving-school.com/wp-content/plugins/js_composer/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.4.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='responsive-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/responsive.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/plugins/woocommerce.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='bbpress-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/plugins/bbpress.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='mini-cart-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/plugins/mini-cart.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='edd-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/plugins/edd.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/plugins/wpml.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='select-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/select.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='layout-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/layout.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='ion-range-slider-css'  href='https://www.driving-school.com/wp-content/themes/themize/framework/admin/css/ion.rangeSlider.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='ion-skin-css'  href='https://www.driving-school.com/wp-content/themes/themize/framework/admin/css/ion.rangeSlider.skinSimple.css?ver=20120208' type='text/css' media='all' />
+<link rel='stylesheet' id='oswald_font-css'  href='https://fonts.googleapis.com/css?family=Oswald%3A200%2C300%2C400%2C500%2C600%2C700&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='Source-Sans-Pro-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A200%2C300%2C400%2C500%2C600%2C700&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='Open-Sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A200%2C300%2C400%2C500%2C600%2C700&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='Quicksand-css'  href='https://fonts.googleapis.com/css?family=Quicksand%3A200%2C300%2C400%2C500%2C600%2C700&#038;ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='custom-style-css'  href='https://www.driving-school.com/wp-content/themes/themize/assets/css/custom.css?ver=4.3.1' type='text/css' media='all' />
+<style>
+	img {
+		width: 140px;
+		/*height: 120px;*/
+		background-color: blue;
+		margin-bottom: 20px;
+    }
+</style>
+
+	<title>Winter14 Version 2</title>
 </head>
-
 <body>
-    <div class="container">
-        <div id="score">
-            <strong>Correct:</strong> <span class="score" id="correct">0</span>
-            <strong>Errors:</strong> <span class="score" id="errors">0</span>
-            <strong>Time:</strong> <span class="score" id="elapsedtime">0</span>
-            <span id="timesUp">...</span>
-        </div>
-        <div class="row">
-            <div class="col-xs-2">
-                <button type="button" id="reset" class="btn btn-primary" autocomplete="off">Reset</button>
-            </div>
-            <div class="row">
-                <div class="col-xs-2">
-                    <button type="button" id="shuffle" class="btn btn-primary">Shuffle</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <div>
-                    <h3>Answer the following questions:</h3>
-                    <h5>Learn while ordered.  Your goal is to then be able to do these with no errors, shuffled,
-                    in less than 2 minutes.</h5>
-                    <div class="row" id="quiz">
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\(64^\tfrac{2}{3}\)
-                                <input data-correct="16" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( 64^\tfrac{3}{2}\)
-                                <input data-correct="512" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( 64^\tfrac{5}{6}\)
-                                <input data-correct="2" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( 64^\tfrac{7}{6}\)
-                                <input data-correct="128" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( 64^\tfrac{-3}{2}\)
-                                <input data-correct="1/512" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( -64^\tfrac{2}{3}\)
-                                <input data-correct="-16" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( -64^\tfrac{3}{2}\)
-                                <input data-correct="-518i" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( -64^\tfrac{2}{3}\)
-                                <input data-correct="-518" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( -64^\tfrac{3}{2}\)
-                                <input data-correct="-518" type="text" /><span></span></p>
+	
+	<div class="content-container">
+	<div class="container">
+	
+		<div class="row">
+		
+			<!-- LEFT SIDEBAR -->
+						
+			<!-- MAIN CONTENT -->
+			<div class="col-md-12">
+				
+									<div id="post-13651" class="post-13651 page type-page status-publish hentry">
+						<table border="0" width="100%" cellspacing="0" cellpadding="5">
+<tbody>
+<tr>
+<td>&nbsp;</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="100%">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<img src="http://saasmath.seattleacademy.org/facultypics/Gough-Jason.jpg" />
+<h3>Jason Gough – English Teacher and College Advisor</h3>
+<p>Fusce aliquam viverra porta. In diam sem, lobortis sit amet ex non, cursus imperdiet odio. Sed a tortor velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum rutrum tortor sit amet dictum. Quisque mollis, lacus vel rutrum vehicula, sem nulla ultrices sem, rhoncus faucibus nisl diam a leo. Nullam mattis lacus ut sapien interdum iaculis. Donec commodo, lacus vel mollis pulvinar, purus augue faucibus purus, nec tristique urna odio in arcu. Nam accumsan ultrices nibh, sed ullamcorper lorem semper quis. Proin eget ipsum dignissim, aliquam augue ac, luctus nibh. Proin accumsan finibus augue, porta lobortis nisl varius vitae. Praesent et sodales diam. </td>
+</tr>
+</tbody>
+</table>
+</tr>
+<tr>
+<td height="33">
+<hr />
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="100%">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<img src="http://saasmath.seattleacademy.org/facultypics/Amsel-Amanda.jpg" />
+<h3>Amanda Amsel - Art Teacher</h3>
+<p>Maecenas viverra ultricies est quis porttitor. Ut nec nulla eros. Aliquam tincidunt quam quis libero facilisis posuere. Praesent dictum euismod felis sit amet sodales. Phasellus sodales neque ac neque fermentum tincidunt. Fusce porta dictum vestibulum. Curabitur vitae lorem ex. Quisque luctus bibendum tellus, et consequat lectus viverra tincidunt. Quisque purus justo, efficitur a ante sit amet, accumsan interdum lorem. Aliquam erat volutpat. Sed laoreet blandit varius. </td>
+</tr>
+</tbody>
+</table>
+</tr>
+<tr>
+<td height="33">
+<hr />
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="100%">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<img src="http://saasmath.seattleacademy.org/facultypics/Cronin-Gabe.jpg" />
+<h3>Gabe Cronin - Chemistry Teacher and Robotics Mentor</h3>
+<p>Maecenas leo metus, dapibus ultrices ex eu, faucibus volutpat nisl. Sed lorem quam, sollicitudin id dolor non, varius malesuada ipsum. Donec consectetur eros nec sapien commodo porttitor. Fusce mi libero, faucibus ac viverra nec, pharetra et est. Vivamus tempor urna purus, in congue libero ullamcorper et. Suspendisse facilisis sapien elit, ac volutpat lectus suscipit non. Aliquam erat volutpat. Donec vel diam tellus. Donec gravida risus dolor, ut tempor libero porta ut. Suspendisse blandit molestie ex ac sollicitudin. Integer ipsum lectus, dictum efficitur egestas vitae, ullamcorper ac quam. Phasellus eu est ligula. Phasellus nec sodales metus, sed efficitur ex. </td>
+</tr>
+</tbody>
+</table>
+</tr>
+<tr>
+<td height="33">
+<hr />
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="100%">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<img src="http://saasmath.seattleacademy.org/facultypics/Anderson-Gary.jpg" />
+<h3>Gary Anderson - Math Teacher, Head of Math Department, Software Development Teacher</h3>
+<p>Nullam vulputate fermentum nulla eget sagittis. Integer et turpis dignissim, blandit ligula eget, euismod quam. Duis ac magna a elit hendrerit imperdiet. In vitae faucibus diam. Proin commodo libero et ipsum hendrerit gravida. Nunc sed ipsum dui. Mauris laoreet, metus eu euismod tincidunt, erat lorem iaculis lectus, sollicitudin ultricies nunc nunc ac quam. Phasellus eget faucibus tortor, at sollicitudin felis. Fusce ex ex, blandit vitae fringilla eget, blandit non nibh. Proin id quam tellus. Aliquam tristique condimentum egestas. Maecenas bibendum, odio vitae ultrices sagittis, neque nulla gravida risus, porttitor convallis purus augue iaculis turpis. Mauris et quam sit amet diam accumsan facilisis vitae sed ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse semper sagittis urna at tempor. </td>
+</tr>
+</tbody>
+</table>
+</tr>
+<tr>			
+					</div>
+							
+			</div>
+			
+			<!-- RIGHT SIDEBAR -->
+						
+		</div>
+		
+	</div>
+</div>
 
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( 32^\tfrac{-6}{5}\)
-                                <input data-correct="1/64" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( -32^\tfrac{-6}{5}\)
-                                <input data-correct="-1/64" type="text" /><span></span></p>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 input">
-                            <p>\( 128^\tfrac{2}{7}\)
-                                <input data-correct="4" type="text" /><span></span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
 </body>
-
 </html>
