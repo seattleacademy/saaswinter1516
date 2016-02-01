@@ -1,2 +1,2 @@
-#Day 14
-Today we worked on cleaning up the Seattle Academy faculty bio page.
+#Day 15
+Today we worked on modeling our revised faculty bios off of existing faculty bios from other organizations.
