@@ -1,159 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
+    <title>Weaponry</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
     /* Add a gray background color and some padding to the footer */
+    body{
+        background-color: #333333;
+    }
+
+    #myCarousel {
+        margin-left: -40%;
+    }
+    
+    #vid {
+        margin-left: -275%;
+    }
+
+    .black{
+        color: white;
+        font-style: bold;
+        font-weight: 200%;
+    }
+    
     footer {
-      background-color: #f2f2f2;
-      padding: 25px;
+        background-color: #f2f2f2;
+        padding: 25px;
     }
     
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
-
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
+    .carousel-inner img {
+        width: 150%;
+        /* Set width to 100% */
+        min-height: 200px;
     }
-  }
-    p{ text-align: left
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
     
+    @media (max-width: 600px) {
+        .carousel-caption {
+            display: none;
+        }
     }
-  </style>
+    </style>
 </head>
+
 <body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Zamiracle Industries</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="logoimage" class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="Images/revolverbp1.PNG" alt="Image">
+                            <div class="carousel-caption">
+                                <h3>3d Blueprints for Current Project</h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="Images/revolverbp2.PNG" alt="Image">
+                            <div class="carousel-caption">
+                                <h3>More 3d Blueprints</h3>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="Images/revolverbp3.PNG" alt="Image">
+                            <div class="carousel-caption">
+                                <h3>Blueprints</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="well">
+                    <p>To the left are 3d blueprints of a revolver/musket thing that we plan to make. We have already made a musket similar, but simpler, to the one in the pictures. A video will be put below</p>
+                </div>
+                <div class="well">
+                    <p>While the 3d blueprints show how it will look in real life, the paper blueprints (on the third slide) detail how to make this.</p>
+                </div>
+                <div class="well">
+                    <p> If you are attempting to recreate this revolver (which is encouraged) or you are just curious, email me at simonrossi@seattleacademy.org for more info. Please be safe while recreating these projects.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+    <div class="container text-center">
+        <h3 class="black">First Musket</h3>
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+                <video id="vid" width="250%" controls>
+                    <source src="Images/IMG_1056.mp4" type="video/mp4">
+                    <source src="Images/IMG_1056.ogv" type="video/mp4">
+                </video>
+                <p class="black" id="vid">Our first musket</p>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p>Here is the video of the musket that we have made. We plan on building more and more devices and weapons until we have perfected the art of building them</p>
+                </div>
+                <div class="well">
+                    <p>This musket, and the revolver are flintlock. This means to fire, there is gun powder in the barrel, then an ember is lowered in through a hole on the top of the barrel. You can see this in the blueprints above.</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p>In the video to the left, you can see me pull the trigger that lowers the embers through the hole into the barrel. Then you can see some smoke blow up out of the hole on top of the barrel.</p>
+                </div>
+                <div class="well">
+                    <p>This weapon is powerful, it is capable of blowing a can clean in half in one shot. For safety the end of the barreling near the hole must be flattened very thoroughly as shown in the blueprints above, so that the force goes out the barrel instead of towards you. </p>
+                </div>
+            </div>
+        </div>
+        <hr>
     </div>
-  </div>
-</nav>
+    <div class="container text-center">
+        <h3 class="black">All of our projects</h3>
+        <h4 class="black">We have made many things, like crossbows, slings, swords, and more. The revolver is our next, and most difficult project. If you would like to attempt to make the revolver that is above email me at simonrossi@seattleacademy.org for full blueprints, materials, and procedures on how to make it. Attempting to recreate anything seen here is ok, but please do it safely and in accordance to local laws.</h4>
+        <br>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="https://betterwithpen.files.wordpress.com/2012/03/magic_the_gathering__duels_of_the_planeswalkers_2012-wallpaper-2560x1600.jpg" alt="Image">
-        <div class="carousel-caption">
-          <h3>Magic: the Gathering</h3>
-          Let the Battle Begin
-    
-    
-          <p></p>
-        </div>      
-      </div>
-
-      <div class="item">
-        <img src="http://pcwallart.com/images/chess-wallpaper-4.jpg" alt="Image">
-        <div class="carousel-caption">
-          <h3>Chess</h3>
-          The Classic Game
-          <p>
-          </p>
-        </div>      
-      </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-  
-<div class="container text-center">    
-  <h3>What We Do</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <a href="http://magic.wizards.com/en/content/strategy">
-      <img src="http://i.imgur.com/xhhiSYi.jpg" class="img-responsive" style="width:100%" alt="Image">
-      </a>
-      <p>Learn More About Magic</p>
-    </div>
-    <div class="col-sm-4"> 
-      <a
-         href="https://en.wikipedia.org/wiki/Bughouse_chess">
-      <img 
-      src="https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/s640x640/sh0.08/e35/12317558_1527422580910827_294718862_n.jpg" 
-      class="img-responsive" style="width:100%" alt="Image">
-      </a>
-      <p>Learn About Bughouse Chess</p>    
-    </div>
-    <div class="col-sm-4">
-      <div class="well">
-       <p>In a game of Magic, you and your opponent are Planeswalkers, powerful mages each armed with a deck of Magic cards representing lands, creatures and spells. Each player summons creatures and casts spells, trying to knock the other down from 20 to 0 life and win the game.</p>
-      </div>
-          </div>
-  </div>
-<div class="row">
-<div class="col-sm-4">
-      <div class="well">
-       <p>In a game of Magic, you and your opponent are Planeswalkers, powerful mages each armed with a deck of Magic cards representing lands, creatures and spells. Each player summons creatures and casts spells, trying to knock the other down from 20 to 0 life and win the game</p>
-      </div>
-</div>
-<div class="col-sm-4">
-      <div class="well">
-       <p>Chess is a board game of strategic skill for two players, played on a checkered board. Each player begins the game with sixteen pieces that are moved and used to capture opposing pieces according to precise rules. The object is to put the opponent's king under a direct attack from which escape is impossible. </p>
-      
-      </div>
-      </div>
-<div class="col-sm-4">
-      <div class="well">
-       <p>Bughouse Chess is a popular chess variant played on two chessboards by four players in teams of two. Normal chess rules apply, except that captured pieces on one board are passed on to the teammate on the other board, who then has the option of putting these pieces on his or her board.</p>
-      </div>
-</div>
-
-
-</div>
-</div>
-</div>
-<footer class="container-fluid text-center">
-  <p>Magic/Chess Club meets every Wednesday at lunch in Gerald Elliot's room, V6. Zamir Birnbach is the founder, current President, and creator of this website. All members of the club love and respect him.</p>
-</footer>
-
+    <br>
+    <footer class="container-fluid text-center">
+        <p>Taken from bootstrap</p>
+    </footer>
 </body>
+
 </html>

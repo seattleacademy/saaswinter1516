@@ -1,148 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Winter 18</title>
+  <title>Winter 19</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
-  <link rel="stylesheet" type="text/css" href="">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
 </head>
+
 <body>
 
-<div class="row">
-  <div class="large-12 columns">
-    <div class="panel">
-      <h1>Vehicle Specifications</h1>
-      <p>Cool m8</p>
+<!--
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        
+      </ul>
     </div>
   </div>
-</div>
-<div class="row">
-<div class="large-4 columns">
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Dealer</th>
-      <th>Make</th>
-      <th>HP / Torque</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2015</td>    
-      <td>Audi</td>
-      <td>A3 Premium Plus 2.0 Quattro</td>
-      <td>220 hp / 258 ft-lbs.</td>
-    </tr>
-    <tr>
-      <td>2015</td>    
-      <td>Audi</td>
-      <td>RS 7 4.0T Performance Prestige </td>
-      <td>600 hp / 516 ft-lbs.</td>
-    </tr>
-    <tr>
-      <td>2015</td>    
-      <td>Audi</td>
-      <td>R8 V10 5.2L Plus Automatic</td>
-      <td>610 hp / 413 ft-lbs.</td>
-    </tr>
-  </tbody>
-</table>
+</nav>
+-->
 
-</div>
-<div class="large-4 columns">
-<h2>Best Vehicles out of Each Table</h2>
-    <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum..</p>
-  </div>
-</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
 
-<div class="row">
-<div class="large-4 columns">
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Make</th>
-      <th>Model</th>
-      <th>HP / Torque</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2015</td>    
-      <td>Aston Martin</td>
-      <td>Vanquish</td>
-      <td>220 hp / 258 ft-lbs.</td>
-    </tr>
-    <tr>
-      <td>2015</td>          
-      <td>Aston Martin</td>
-      <td>Vantage V12 </td>
-      <td>600 hp / 516 ft-lbs.</td>
-    </tr>
-    <tr>
-      <td>2015</td>         
-      <td>Aston Martin</td>
-      <td>DB 10</td>
-      <td>610 hp / 413 ft-lbs.</td>
-    </tr>
-  </tbody>
-</table>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="http://www.motherjones.com/files/3340080103_f07a9edef6_0.jpg" alt="Image" style="width:50%">
+        <div class="carousel-caption">
+          <h3>Seattle</h3>
+        </div>      
+      </div>
 
+      <div class="item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Tokyo_Tower_and_surrounding_area.jpg" alt="Image" style="width:50%">
+        <div class="carousel-caption">
+          <h3>Tokyo</h3>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
 </div>
-<div class="large-4 columns">
-    <h3>Column 2</h3>
-    <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum..</p>
-  </div>
-</div>
-
-<div class="row">
-<div class="large-4 columns">
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>    
-      <th>Make</th>
-      <th>Model</th>
-      <th>HP / Torque</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2016</td>          
-      <td>McLaren</td>
-      <td>570 S 3.8L V8 </td>
-      <td>562 hp / 443 ft-lbs.</td>
-    </tr>
-    <tr>
-      <td>2015</td>          
-      <td>McLaren</td>
-      <td>650 S 3.8L V8 Convertible</td>
-      <td>641 hp / 500 ft-lbs.</td>
-    </tr>
-    <tr>
-      <td>2016</td>    
-      <td>McLaren</td>
-      <td>P1 GTR 3.8L Twin-Turbo V8</td>
-      <td>986 hp / 1000 ft-lbs.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-</div>
-<div class="large-4 columns">
-<h3></h3>
-    <img src="images/car1">
-  </div>
   
-
-</div>
-
+<div class="container text-center">    
+  <h3>Who I Am</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="http://media-cdn.tripadvisor.com/media/photo-s/03/9b/30/26/seattle.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <p>I was born and raised in Seattle, Washington</p>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="https://savvler-prod.s3-ap-northeast-1.amazonaws.com/lists/983/shinjuku.jpg/original?1447728301" class="img-responsive" style="width:90%" alt="Image">
+      <p>My mother is from Tokyo, Japan, and my family goes back fairly often</p>    
+    </div>
+    <div class="col-sm-4"> 
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr7NWCPVP7nWPCaQ0eOIVSOCVsnhxwSm9zaXWzB2GtI9-sITZL9A" class="img-responsive" style="width:90%" alt="Image">
+      <p>I have been playing soccer since I was in 1st grade</p>    
+    </div>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN6AbU8MbznqwPZm7oaNlEY0I5AwlObNNVo1RGwNjV0NtIR-csCQ" class="img-responsive" style="width:100%" alt="Image">
+      <p>I have been playing trumpet since I was in 4th grade</p>    
+    </div>
+    <div class="col-sm-4"> 
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSSN3MOZ0GS4gJ8FGc7JTfx6jLFg6THk135NHjNZreaXx-RiX00" class="img-responsive" style="width:100%" alt="Image">
+      <p>My favorite food is udon</p>    
+    </div>
+    <div class="col-sm-4"> 
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Art_center_doorway.JPG/220px-Art_center_doorway.JPG" class="img-responsive" style="width:100%" alt="Image">
+      <p>I am currently attending SAAS</p>    
+    </div>
+  </div>
+</div><br>
 
 </body>
+
 </html>
