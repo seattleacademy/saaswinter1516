@@ -1,2 +1,2 @@
-# winter20
-Introductory work with the command line and git for Gary Anderson's Software Development classes.
+#gh-pages
+By creating a gh-pages branch, you can host static webpages for free!
