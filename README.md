@@ -1,2 +1,2 @@
-#Day 19
-Today in class we finished our personalized websites!
+# winter20
+Introductory work with the command line and git for Gary Anderson's Software Development classes.
